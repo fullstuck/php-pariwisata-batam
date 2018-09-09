@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 include ("koneksi.php");
 date_default_timezone_set('Asia/Jakarta');
@@ -35,42 +34,4 @@ if (mysqli_num_rows($q) == 1) {
 } else {
 	header('location:index.php?error=4');
 }
-=======
-<?php
-include ("koneksi.php");
-date_default_timezone_set('Asia/Jakarta');
-
-session_start();
-
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-//$username = mysqli_real_escape_string($username);
-//$password = mysqli_real_escape_string($password);
-
-if (empty($username) && empty($password)) {
-	header('location:index.php?error1');
-	//break;
-} else if (empty($username)) {
-	header('location:index.php?error=2');
-	//break;
-} else if (empty($password)) {
-	header('location:index.php?error=3');
-	//break;
-}
-
-$q = mysqli_query($koneksi, "select * from user where username='$username' and password='$password'");
-$row = mysqli_fetch_array ($q);
-
-if (mysqli_num_rows($q) == 1) {
-    $_SESSION['user_id'] = $row['user_id'];
-	$_SESSION['username'] = $username;
-	$_SESSION['fullname'] = $row['fullname'];    
-	$_SESSION['gambar'] = $row['gambar'];	
-
-	header('location:dashboard/index.php');
-} else {
-	header('location:index.php?error=4');
-}
->>>>>>> f7976112f70f9e8d744805a8661a87c7bf4047b6
 ?>
