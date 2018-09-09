@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .site-top {
 	position: relative;
 	z-index: 4;
@@ -23,4 +24,31 @@
 		display: block;
 		margin-bottom: 30px;
 	}
+=======
+.site-top {
+	position: relative;
+	z-index: 4;
+	background: rgba($black, 0.6);
+	margin-bottom: 40px;
+	padding-bottom: 60px;
+}
+
+.site-header {
+	padding-top: 40px;
+}
+.site-brand {
+	color: $white;
+	text-transform: uppercase;
+	font-size: 18px;
+	strong {
+		font-size: 24px;
+		font-family: 'robotobold';
+	}
+	@include media(max-width $phone) {
+		float: none !important; 
+		text-align: center;
+		display: block;
+		margin-bottom: 30px;
+	}
+>>>>>>> f7976112f70f9e8d744805a8661a87c7bf4047b6
 }
